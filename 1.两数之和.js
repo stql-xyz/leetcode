@@ -11,14 +11,15 @@
  * @return {number[]}
  */
 var twoSum = function (nums, target) {
-    const temp = {};
+    const map = {};
     for (let i = 0; i < nums.length; i++) {
       const left = target - nums[i];
-      // 比直接使用 temp[left] !== undefined 更高效率
-      if (temp.hasOwnProperty(left)) {
-        return [temp[left], i];
+      if (map.hasOwnProperty(left)) {
+        return [map[left], i];
       }
-      temp[nums[i]] = i;
+      map[nums[i]] = i; 
     }
 };
 // @lc code=end
+
+console.log(twoSum([2,7,11,15], 9))
